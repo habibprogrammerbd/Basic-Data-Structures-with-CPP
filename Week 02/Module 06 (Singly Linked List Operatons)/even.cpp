@@ -13,45 +13,44 @@ public:
     }
 };
 
-void insert_at_tell(Node *&head, Node *&tell, int value)
+void insert_at_tail(Node *&head, Node *&tail, int value)
 {
     Node *newnode = new Node(value);
+
     if (head == NULL)
     {
         head = newnode;
-        tell = newnode;
+        tail = newnode;
         return;
     }
-
-    Node *tmp = tell;
-
-    tell->next = newnode;
-    tell = newnode;
+    tail->next = newnode;
+    tail = newnode;
 }
 void print_link_list(Node *head)
 {
     Node *tmp = head;
-    int count = 0;
+
     while (tmp != NULL)
     {
-        count++;
+        if (tmp->value % 2 == 0)
+        {
+            cout << tmp->value << endl;
+        }
+
         tmp = tmp->next;
     }
-    cout << count << endl;
 }
 int main()
 {
     Node *head = NULL;
-    Node *tell = NULL;
+    Node *tail = NULL;
 
-    insert_at_tell(head, tell, 2);
-    insert_at_tell(head, tell, 8);
-    insert_at_tell(head, tell, 9);
-    insert_at_tell(head, tell, 9);
-    insert_at_tell(head, tell, 9);
-    insert_at_tell(head, tell, 9);
+    insert_at_tail(head, tail, 10);
+    insert_at_tail(head, tail, 20);
+    insert_at_tail(head, tail, 3);
+    insert_at_tail(head, tail, 40);
+    insert_at_tail(head, tail, 50);
 
     print_link_list(head);
-
     return 0;
 }

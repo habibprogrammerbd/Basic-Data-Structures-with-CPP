@@ -31,27 +31,11 @@ void insert_at_tell(Node *&head, Node *&tell, int value)
 void print_link_list(Node *head)
 {
     Node *tmp = head;
-    int count = 0;
+
     while (tmp != NULL)
     {
-        count++;
+        cout << tmp->value << endl;
         tmp = tmp->next;
-    }
-    int ans = count / 2;
-    Node *tec = head;
-    for (int i = 1; i < ans; i++)
-    {
-        tec = tec->next;
-    }
-
-    if (count % 2 == 0)
-    {
-        cout << tec->value << endl;
-        cout << tec->next->value << endl;
-    }
-    else
-    {
-        cout << tec->next->value << endl;
     }
 }
 int main()
@@ -61,10 +45,10 @@ int main()
 
     insert_at_tell(head, tell, 2);
     insert_at_tell(head, tell, 8);
-    insert_at_tell(head, tell, 78);
     insert_at_tell(head, tell, 9);
-    insert_at_tell(head, tell, 10);
-    // insert_at_tell(head, tell, 10);
+    insert_at_tell(head, tell, 9);
+    insert_at_tell(head, tell, 9);
+    insert_at_tell(head, tell, 9);
 
     print_link_list(head);
 
