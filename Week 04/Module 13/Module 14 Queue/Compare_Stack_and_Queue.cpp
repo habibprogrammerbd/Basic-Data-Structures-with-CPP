@@ -21,6 +21,7 @@ int main()
         cin >> val;
         q.push(val);
     }
+    cout << ;
     bool flas = true;
     if (a != n)
     {

@@ -29,6 +29,7 @@ int main()
     while (!q2.empty())
     {
         cout << q2.front() << " ";
+        break;
         q2.pop();
     }
 
